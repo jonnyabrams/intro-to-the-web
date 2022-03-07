@@ -5,12 +5,16 @@ get '/' do
   "hello"
 end
 
+get '/name-that-cat' do
+  erb :name_that_cat
+end
+
 get '/random-cat' do
   @name = ['Amigo', 'Misty', 'Almond'].sample
   erb :random_cat
 end
 
-get '/named-cat' do
+post '/named-cat' do
   p params
   @name = params[:name]
   erb :named_cat
